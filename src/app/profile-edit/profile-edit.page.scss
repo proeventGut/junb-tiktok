@@ -1,0 +1,71 @@
+ion-header {
+  background: #101F25;
+  color: white;
+}
+.login-bg {
+  position: absolute;
+  top:0;
+  width: 100%;
+  z-index: -1;
+  img {
+    width: 100%;
+  }
+}
+.block {
+  background-image: url("../../assets/img/login-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.register-logo {
+  width: 6rem;
+  height: 12rem;
+  margin: 0 auto;
+  border-top: 1px solid transparent;
+  .logo-box {
+    margin: 3rem 0;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 1px solid #23375d;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+}
+.user {
+  width: 90%;
+  margin: .8rem auto;
+  border-bottom: 1px solid #121E2A;
+
+  input {
+    margin-left: 1rem;
+    font-size: .8rem;
+    color: white;
+    width: 90%;
+    height: 2.5rem;
+    border: 0;  // 去除未选中状态边框
+    outline: none; // 去除选中状态边框
+    background-color: rgba(0, 0, 0, 0);// 透明背景
+  }
+}
+.login-btn {
+  width: 90%;
+  height: 2.5rem;
+  border-radius: 2.5rem;
+  background: #4F98C7;
+  color: white;
+  text-align: center;
+  line-height: 2.5rem;
+  margin: 3rem auto 1rem;
+}
+
+
+

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar mode="ios" color="header">
+    <ion-buttons slot="start">
+      <ion-back-button text=" "></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+
+  <div class="block">
+
+    <div class="content-logo" [ngClass]="registerBool ? 'register-logo' : ''">
+      <img src="./assets/img/login-logo.png" alt="">
+    </div>
+
+    <div class="content-login" *ngIf="!registerBool">
+      <div class="user">
+        <input type="text" [(ngModel)]="account" placeholder="用户名">
+      </div>
+      <div class="user">
+        <input type="password" [(ngModel)]="pass" placeholder="密码">
+      </div>
+      <div class="login-btn" (click)="login()">登录</div>
+      <div class="content-btm">
+        <div (click)="forgetPass()">忘记密码？</div>
+        <div (click)="changeRegister()">注册</div>
+      </div>
+    </div>
+
+    <div class="content-register" *ngIf="registerBool">
+
+      <div class="user">
+        <input type="text" [(ngModel)]="name" placeholder="用户名">
+      </div>
+      <div class="user">
+        <input type="text" [(ngModel)]="email" placeholder="邮箱">
+      </div>
+      <div class="user">
+        <input type="password" [(ngModel)]="password" placeholder="密码">
+      </div>
+      <div class="user">
+        <input type="password" [(ngModel)]="confirmPassword" placeholder="确认密码">
+      </div>
+
+      <div class="content-btm">
+        <div class="btm-protocol">
+          <ion-checkbox [(ngModel)]="protocolStatus"></ion-checkbox>
+          <span class="protocol" (click)="goUserProtocol()">用户协议</span>
+        </div>
+      </div>
+
+      <div class="login-btn2" (click)="register()">注册</div>
+      <div class="content-btm content-btm-c">
+        <div (click)="goLogin()">已有账号去登录</div>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

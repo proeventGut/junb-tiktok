@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar mode="ios" color="header">
+        <ion-buttons slot="start">
+            <ion-back-button [text]="' '"></ion-back-button>
+        </ion-buttons>
+        <ion-title>视频发布</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="content-bg">
+        <img src="./assets/img/feeds-bg.jpg" alt="">
+    </div>
+
+    <div style="text-align: center; margin-top: 1rem;margin-bottom: 1rem;">
+
+        <ion-item color="air" class="title">
+            <ion-label color="light" slot="start">标题</ion-label>
+            <ion-textarea [(ngModel)]="title" rows="6" cols="20" placeholder="给您的视频添加一个有趣的标题吧！"></ion-textarea>
+        </ion-item>
+
+        <!--<ion-item>-->
+            <!--<ion-label>預覽圖</ion-label>-->
+        <!--预览图 给您的视频添加一个有趣的标题吧！-->
+            <!--<img style="object-fit: cover;width: 8rem;height: 10rem" src="assets/shapes.svg">-->
+        <!--</ion-item>-->
+
+        <div style="display: flex">
+            <!--<button ion-button (click)="openCamera()">打开摄像头</button>-->
+
+            <!--<button ion-button (click)="recordVideo()">录像</button>-->
+
+
+
+        </div>
+
+        <!--<ion-item class="title" color="air">-->
+            <!--<ion-label color="light">封面</ion-label>-->
+            <!--<img *ngIf="!imageSource" style="object-fit: cover;width: 8rem;height: 10rem" src="assets/shapes.svg">-->
+            <!--<div *ngIf="imageSource">-->
+                <!--<img style="object-fit: cover;width: 8rem;height: 10rem"-->
+                     <!--src="{{'http://tiktok.tiantianquan.xyz/storage' + imageSource}}" alt="">-->
+            <!--</div>-->
+        <!--</ion-item>-->
+
+        <div class="video">
+            <ion-button *ngIf="!imageSource" (click)="selectVideo()">
+                选择视频
+                <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+            </ion-button>
+            <!--<div *ngIf="!imageSource" class="check">-->
+                <!--<img src="assets/shapes.svg" alt="">-->
+                <!--<span>封面</span>-->
+            <!--</div>-->
+            <div *ngIf="imageSource" class="check">
+                <img src="{{'http://tiktok.tiantianquan.xyz/storage' + imageSource}}" alt="">
+                <span>封面</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="upLoading">
+        <ion-spinner name="crescent"></ion-spinner>
+    </div>
+
+    <!--<div>-->
+        <!--<ion-progress-bar value="{{progresss}}"></ion-progress-bar>-->
+    <!--</div>-->
+
+
+
+    <div class="release" (click)="publish()">发布</div>
+
+
+</ion-content>
+
+
+<!--ionSlideTransitionEnd	Emitted when the slide transition has ended.-->
+<!--ionSlideTransitionStart-->
